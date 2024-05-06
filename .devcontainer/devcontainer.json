@@ -1,0 +1,14 @@
+{
+  "name": "Picpay desafio backend",
+  "dockerComposeFile": ["compose.yml"],
+  "service": "api",
+  "workspaceFolder": "/home/app",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["vscjava.vscode-java-pack", "vscjava.vscode-spring-initializr"]
+    }
+  }
+}

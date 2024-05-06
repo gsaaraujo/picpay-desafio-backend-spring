@@ -1,0 +1,29 @@
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    container_name: picpay-desafio-backend-api
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - ..:/home/app
+
+  postgres:
+    image: postgres:15.3
+    container_name: picpay-desafio-backend-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - picpay-desafio-backend-postgres:/data/postgres
+
+
+volumes:
+  picpay-desafio-backend-postgres:
