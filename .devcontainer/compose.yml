@@ -1,14 +1,14 @@
 services:
-  api:
-    build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
-    container_name: picpay-desafio-backend-api
-    restart: unless-stopped
-    ports:
-      - 8080:8080
-    volumes:
-      - ..:/home/app
+  # api:
+  #   build:
+  #     context: ..
+  #     dockerfile: .devcontainer/Dockerfile
+  #   container_name: picpay-desafio-backend-api
+  #   restart: unless-stopped
+  #   ports:
+  #     - 8080:8080
+  #   volumes:
+  #     - ..:/home/app
 
   postgres:
     image: postgres:15.3
@@ -21,9 +21,13 @@ services:
       PGDATA: /data/postgres
     ports:
       - 5432:5432
-    volumes:
-      - picpay-desafio-backend-postgres:/data/postgres
-
-
-volumes:
-  picpay-desafio-backend-postgres:
+  
+  rabbitmq:
+    image: rabbitmq:3.13.1-management-alpine
+    container_name: picpay-desafio-backend-rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - 5672:5672
+      - 15672:15672
