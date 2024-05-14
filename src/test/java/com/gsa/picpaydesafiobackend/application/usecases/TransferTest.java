@@ -66,8 +66,15 @@ public class TransferTest {
   @Test
   public void it_should_fail_if_transfer_is_not_authorized() {
     this.fakeTransferAuthorizerGateway.isAuthorized = false;
+    var fakePayerWallet = new FakeWalletDTO(UUID.randomUUID(), UUID.fromString("221af725-093a-426b-815c-5c6a9d7f98df"),
+        BigDecimal.valueOf(320.0));
+    var fakePayeeWallet = new FakeWalletDTO(UUID.randomUUID(), UUID.fromString("658a6509-c8a6-4e41-b82d-66f092055f77"),
+        BigDecimal.valueOf(150.0));
+    this.fakeWalletRepository.fakeWallets.add(fakePayerWallet);
+    this.fakeWalletRepository.fakeWallets.add(fakePayeeWallet);
     var input = new Transfer.Input(UUID.fromString("221af725-093a-426b-815c-5c6a9d7f98df"),
-        UUID.fromString("658a6509-c8a6-4e41-b82d-66f092055f77"), BigDecimal.valueOf(100.0));
+        UUID.fromString("658a6509-c8a6-4e41-b82d-66f092055f77"),
+        BigDecimal.valueOf(100.0));
 
     assertThrows(TransactionNotAuthorizedException.class, () -> this.transfer.execute(input));
   }

@@ -36,7 +36,7 @@ public class DatabaseWalletRepository implements WalletRepository {
   @Override
   public void update(Wallet wallet) {
     var customerDAO = this.customerDAO.findById(wallet.customerId()).orElseThrow();
-    var walletORM = new WalletORM(wallet.id(), customerDAO, wallet.balance());
+    var walletORM = new WalletORM(wallet.id(), customerDAO, wallet.balance().value());
     this.walletDAO.save(walletORM);
   }
 

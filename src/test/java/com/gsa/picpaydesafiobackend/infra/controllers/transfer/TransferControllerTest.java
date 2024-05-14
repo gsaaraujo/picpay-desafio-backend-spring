@@ -61,7 +61,7 @@ public class TransferControllerTest {
             {
               "payerId": "9fdf94aa-a539-47bf-8858-dc5b99dc688c",
               "payeeId": "1da7659e-b0ad-47db-a60f-af2216446bed",
-              "value": "125.40"
+              "value": 125.40
             }
             """))
         .andExpect(status().isOk())
@@ -85,7 +85,7 @@ public class TransferControllerTest {
             {
               "payerId": "9fdf94aa-a539-47bf-8858-dc5b99dc688c",
               "payeeId": "1da7659e-b0ad-47db-a60f-af2216446bed",
-              "value": "125.40"
+              "value": 125.40
             }
             """))
         .andExpect(status().isConflict())
@@ -112,7 +112,7 @@ public class TransferControllerTest {
             {
               "payerId": "9fdf94aa-a539-47bf-8858-dc5b99dc688c",
               "payeeId": "1da7659e-b0ad-47db-a60f-af2216446bed",
-              "value": "125.40"
+              "value": 125.40
             }
             """))
         .andExpect(status().isConflict())
@@ -145,7 +145,7 @@ public class TransferControllerTest {
             {
               "payerId": "9fdf94aa-a539-47bf-8858-dc5b99dc688c",
               "payeeId": "1da7659e-b0ad-47db-a60f-af2216446bed",
-              "value": "125.40"
+              "value": 125.40
             }
             """))
         .andExpect(status().isConflict())
@@ -165,7 +165,7 @@ public class TransferControllerTest {
             {
               "payerId": "9fdf94aa-a539-47bf-8858-dc5b99dc688c",
               "payeeId": "9fdf94aa-a539-47bf-8858-dc5b99dc688c",
-              "value": "125.40"
+              "value": 125.40
             }
             """))
         .andExpect(status().isConflict())
@@ -198,7 +198,7 @@ public class TransferControllerTest {
             {
               "payerId": "9fdf94aa-a539-47bf-8858-dc5b99dc688c",
               "payeeId": "1da7659e-b0ad-47db-a60f-af2216446bed",
-              "value": "3000"
+              "value": 3000
             }
             """))
         .andExpect(status().isConflict())
@@ -210,5 +210,4 @@ public class TransferControllerTest {
         .andExpect(jsonPath("$.error.suggestion").value("Please check if the payer has enough balance"))
         .andExpect(jsonPath("$.error.timestamp").exists());
   }
-
 }

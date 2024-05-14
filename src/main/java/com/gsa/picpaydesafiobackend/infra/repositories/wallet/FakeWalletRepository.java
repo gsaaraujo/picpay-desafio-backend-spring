@@ -36,7 +36,7 @@ public class FakeWalletRepository implements WalletRepository {
     }
 
     var fakeWalletUpdated = new FakeWalletDTO(fakeWalletFound.get().id(), fakeWalletFound.get().customerId(),
-        wallet.balance());
+        wallet.balance().value());
 
     this.fakeWallets.remove(fakeWalletFound.get());
     this.fakeWallets.add(fakeWalletUpdated);
