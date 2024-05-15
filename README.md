@@ -1,6 +1,6 @@
 Implementação do [desafio picpay backend](https://github.com/PicPay/picpay-desafio-backend)
 
-#### Design & Arquitetura
+### Design & Arquitetura
 - Arquitetura hexagonal
 - DDD (Entidade de domínio, objetos de valor e repositório)
 - Message queue (RabbitMQ)
