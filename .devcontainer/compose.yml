@@ -1,14 +1,14 @@
 services:
-  # api:
-  #   build:
-  #     context: ..
-  #     dockerfile: .devcontainer/Dockerfile
-  #   container_name: picpay-desafio-backend-api
-  #   restart: unless-stopped
-  #   ports:
-  #     - 8080:8080
-  #   volumes:
-  #     - ..:/home/app
+  api:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    container_name: picpay-desafio-backend-api
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - ..:/home/app
 
   postgres:
     image: postgres:15.3
