@@ -5,6 +5,7 @@ Implementação do [desafio picpay backend](https://github.com/PicPay/picpay-des
 - DDD (Entidade de domínio, objetos de valor e repositório)
 - Message queue (RabbitMQ)
 - DAO e Gateways
+- CQRS
 - Testes de unidade e integração
 
 ### Tecnologias
