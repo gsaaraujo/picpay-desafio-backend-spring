@@ -7,7 +7,7 @@ Implementação do [desafio picpay backend](https://github.com/PicPay/picpay-des
 - Testes de unidade e integração
 
 ### Os porquês
-- **Hexagonal:** isolar a aplicação dos drivers e drivens me abre possibilidade de testar as funcionalidades sem precisar bater nos recursos externos, que nesse caso são serviço autorizador, serviço notificador, banco e fila.
+**Hexagonal:** isolar a aplicação dos drivers e drivens me abre possibilidade de testar as funcionalidades sem precisar bater nos recursos externos, que nesse caso são serviço autorizador, serviço notificador, banco e fila.
 Claro que depende da situação, mas normalmente eu não sou adepto a ideia de abstrair o banco porque um dia, talvez, quem sabe, vai que o banco muda. Geralmente eu crio abstrações para aumentar a testabilidade. 
 
 **DDD (Entidade de domínio, objetos de valor e repositório):** Apesar do desafio não ter tanta complexidade de regra de negócio, sempre que consigo eu gosto de sair do transaction script e ter um domínio mais rico. Uma das vantagens é que eu consigo concentrar regras de negócio num só lugar e aplicar bastante teste de unidade em cima dessas regras.
