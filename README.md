@@ -25,6 +25,8 @@ Agora caso o serviço notificador esteja fora do ar, a transação vai ser concl
 - Spring AMQP
 - Docker
 
+Apesar de eu ter usado o banco (postgres) e a fila (rabbitMq) containerizados para facilitar o desenvolvimento do desafio, em produção eu com certeza usaria serviços gerenciados pelo cloud provider como um RDS por exemplo. 
+
 ### Como executar
 A api está containerizada, então você pode rodar o projeto usando devcontainer ou usando os comandos abaixo.
 
